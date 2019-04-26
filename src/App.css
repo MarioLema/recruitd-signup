@@ -61,6 +61,7 @@ a {
 /* FORM HOLDER */
 .form-holder div {
 	width: 25rem;
+	position: relative;
 }
 
 .signup-link {
@@ -90,6 +91,9 @@ a {
 .input-box:focus {
 	border: solid #025c00f0 1px;
 }
+.input-box:invalid{
+	box-shadow: none;
+}
 
 button {
 	width: 100%;
@@ -99,6 +103,7 @@ button {
 	border-radius: 4px;
 	background: #00cba7;
 	margin-top: 1rem;
+	cursor: pointer;
 }
 
 .checkbox-label {
@@ -119,6 +124,9 @@ button {
 	cursor: pointer;
 	height: 0;
 	width: 0;
+	left: 0;
+	top: 0;
+	z-index: 10;
 }
 
 .checkmark {
@@ -145,4 +153,41 @@ button {
 }
 .checkbox-label input:checked ~ .checkmark:after {
 	display: block;
-  }
+  
+}
+.submit-message{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 2rem 1rem;
+	max-width: 20rem;
+	border-radius: 4px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+	color: white;
+	font-weight: bolder;
+	display: none;
+}
+.submit-success{
+	background: #008898c2;
+	display: block;
+}
+.submit-fail{
+	background: #f99d9d;
+	display: block;
+}
+.submit-message span{
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 0.3rem;
+	cursor: pointer;
+}
+.password-toggle{
+		cursor: pointer;
+		position: absolute;
+		right: 1rem;
+		top: 1.7rem;
+		font-size: 1.5rem;
+		opacity: 0.7;
+}
