@@ -214,14 +214,13 @@ p {
 
 /* ==========CUSTOM CHECKBOX========== */
 .checkbox {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-	left: 0;
-	top: 0;
-	z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    z-index: 10;
+    left: 0;
+    position: absolute;
 }
 
 .checkmark {

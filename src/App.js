@@ -41,21 +41,22 @@ class App extends React.Component {
       }
     };
     axios.post("https://staging-api.recruitd.co.uk/professional_auth/", body, config )
-
       .then(function(response) {
           this.setState({
             popupClasses: ["submit-message", "submit-success"],
-            popUpText: `Thank you for Registering with us. Please check your email to confirm your account`
+            popUpText: `Thank you for Registering with us, ${response.data.data.name}. Please check your email to confirm your account`
           });
           document.getElementById("signup-form").reset();
+          return true;
         }.bind(this)
       )
 
       .catch(function(error) {
           this.setState({
             popupClasses: ["submit-message", "submit-fail"],
-            popUpText: `Sorry, user already registered`
+            popUpText: `Sorry, ${error.response.data.errors.full_messages.join(', ')}`
           });
+          return true;
         }.bind(this)
       );
   }
