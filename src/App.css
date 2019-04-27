@@ -16,11 +16,9 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
 a {
 	color: rgb(88, 96, 141);
 }
-
 .App {
 	color: rgb(56, 56, 56);
 	height: 100vh;
@@ -41,6 +39,7 @@ a {
 /* LOGO HOLDER */
 .logo-holder {
 	background-color: #00cba7;
+	overflow: hidden;
 }
 
 .shape {
@@ -68,6 +67,11 @@ a {
 	margin-bottom: 1.2rem;
 	color: #9A9CA1;
 	font-size: 0.9rem;
+}
+.signup-link span {
+	color: rgb(88, 107, 141);
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 .box-label {
@@ -190,4 +194,54 @@ button {
 		top: 1.7rem;
 		font-size: 1.5rem;
 		opacity: 0.7;
+}
+.forgotten-pass-link {
+	margin-top: 2rem;
+	display: block;
+	text-decoration: underline;
+	cursor: pointer;
+	color: rgb(88, 96, 141);
+}
+h2{
+		margin-bottom: 1rem;
+		font-weight: lighter;
+}
+p {
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+	line-height: 1.6rem;
+}
+.top-shape {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 24rem;
+}
+.bottom-shape {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 24rem;
+}
+
+#shape1{
+	animation: size 1500ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 1500ms infinite alternate running;
+}
+#shape2, #shadow1{
+	animation: size 2000ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 2000ms infinite alternate running;
+}
+#shape3{
+	animation: size 2000ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 2000ms infinite alternate running;
+}
+#shape4, #shadow2{
+	animation: size 1500ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 1500ms infinite alternate running;
+}
+
+@keyframes size {
+	0% {height: 70rem}
+	100% {height: 24rem}
+}
+@keyframes fluctuate{
+	0% {height: 24rem}
+	100% {height: 26rem}
 }
