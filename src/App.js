@@ -43,7 +43,6 @@ class App extends React.Component {
     axios.post("https://staging-api.recruitd.co.uk/professional_auth/", body, config )
 
       .then(function(response) {
-          console.log(response);
           this.setState({
             popupClasses: ["submit-message", "submit-success"],
             popUpText: `Thank you for Registering with us. Please check your email to confirm your account`
@@ -53,7 +52,6 @@ class App extends React.Component {
       )
 
       .catch(function(error) {
-          console.log(error);
           this.setState({
             popupClasses: ["submit-message", "submit-fail"],
             popUpText: `Sorry, email already registered`
