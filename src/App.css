@@ -1,14 +1,13 @@
+/* ==========FONTS========== */
 @font-face {
 	font-family: 'Inter';
 	src: url('./fonts/Inter-Regular.otf') format('otf'),
 		url('./fonts/Inter-Regular.woff2') format('woff2'),
-		/* Super Modern Browsers */
 		url('./fonts/Inter-Regular.woff') format('woff'),
-		/* Pretty Modern Browsers */
 		url('./fonts/Inter-Regular.ttf') format('truetype'),
-		/* Safari, Android, iOS */
 }
 
+/* ==========PAGE SETUP========== */
 *,
 *::after,
 *::before {
@@ -16,9 +15,22 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 a {
 	color: rgb(88, 96, 141);
 }
+
+h2 {
+	margin-bottom: 1rem;
+	font-weight: lighter;
+}
+
+p {
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+	line-height: 1.6rem;
+}
+
 .App {
 	color: rgb(56, 56, 56);
 	height: 100vh;
@@ -34,30 +46,103 @@ a {
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	height: 100%;
 }
 
-/* LOGO HOLDER */
+/* ==========LOGO HOLDER========== */
 .logo-holder {
 	background-color: #00cba7;
 	overflow: hidden;
 }
 
-.shape {
+.logo-holder img {
+	z-index: 100;
+}
+
+.top-shape {
 	position: absolute;
-}
-
-.shape--top {
-	top: 0;
 	left: 0;
-	height: 18rem;
+	top: 0;
+	height: 24rem;
+	width: 25rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+	animation: size 2000ms ease-in-out forwards 1;
+	background-image: url(images/shadow1.svg)
 }
 
-.shape--bottom {
+.top-shape::before {
+	content: "";
+	height: 24rem;
+	width: 25rem;
+	position: absolute;
+	background-image: url(images/shape1.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	animation: size 1500ms ease-in-out forwards 1;
+}
+
+.top-shape::after {
+	content: "";
+	height: 24rem;
+	width: 25rem;
+	position: absolute;
+	background-image: url(images/shape2.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	animation: size 2000ms ease-in-out forwards 1;
+}
+
+.bottom-shape {
+	position: absolute;
 	bottom: 0;
 	right: 0;
+	height: 24rem;
+	width: 25rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right;
+	animation: size 1500ms ease-in-out forwards 1;
+	background-image: url(images/shadow2.svg)
 }
 
-/* FORM HOLDER */
+.bottom-shape::before {
+	content: "";
+	height: 24rem;
+	width: 25rem;
+	position: absolute;
+	background-image: url(images/shape3.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right;
+	animation: size 1500ms ease-in-out forwards 1;
+}
+
+.bottom-shape::after {
+	content: "";
+	height: 24rem;
+	width: 25rem;
+	position: absolute;
+	background-image: url(images/shape4.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right;
+	animation: size 2000ms ease-in-out forwards 1;
+}
+
+@keyframes size {
+	0% {
+		height: 70rem;
+		width: 70rem;
+	}
+
+	100% {
+		height: 24rem;
+		width: 25rem;
+	}
+}
+
+/* ==========FORM HOLDER========== */
 .form-holder div {
 	width: 25rem;
 	position: relative;
@@ -68,12 +153,16 @@ a {
 	color: #9A9CA1;
 	font-size: 0.9rem;
 }
-.signup-link span {
+
+.signup-link button {
 	color: rgb(88, 107, 141);
 	text-decoration: underline;
 	cursor: pointer;
+	background: none;
+	border: none;
 }
 
+/* ==========FORM========== */
 .box-label {
 	display: block;
 	margin-bottom: 0.5rem;
@@ -95,11 +184,12 @@ a {
 .input-box:focus {
 	border: solid #025c00f0 1px;
 }
-.input-box:invalid{
+
+.input-box:invalid {
 	box-shadow: none;
 }
 
-button {
+.submit-button {
 	width: 100%;
 	padding: 0.75rem;
 	color: white;
@@ -122,6 +212,7 @@ button {
 	text-decoration: none;
 }
 
+/* ==========CUSTOM CHECKBOX========== */
 .checkbox {
 	position: absolute;
 	opacity: 0;
@@ -155,93 +246,106 @@ button {
 	color: #00cba7;
 	top: -7px;
 }
-.checkbox-label input:checked ~ .checkmark:after {
+
+.checkbox-label input:checked~.checkmark:after {
 	display: block;
-  
+
 }
-.submit-message{
+
+/* ==========SUCCESS-FAIL MESSAGE========== */
+.submit-message {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	top: 2rem;
 	padding: 2rem 1rem;
-	max-width: 20rem;
-	border-radius: 4px;
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+	width: 100%;
 	color: white;
 	font-weight: bolder;
 	display: none;
+	text-align: center;
 }
-.submit-success{
+
+.submit-success {
 	background: #008898c2;
 	display: block;
 }
-.submit-fail{
+
+.submit-fail {
 	background: #f99d9d;
 	display: block;
 }
-.submit-message span{
+
+.submit-message span {
 	position: absolute;
 	right: 0;
 	top: 0;
 	margin: 0.3rem;
 	cursor: pointer;
 }
-.password-toggle{
-		cursor: pointer;
-		position: absolute;
-		right: 1rem;
-		top: 1.7rem;
-		font-size: 1.5rem;
-		opacity: 0.7;
+
+/* ==========PASSWORD TOGGLER========== */
+.password-toggle {
+	cursor: pointer;
+	position: absolute;
+	right: 1rem;
+	top: 1.7rem;
+	font-size: 1.5rem;
+	opacity: 0.7;
 }
+
 .forgotten-pass-link {
 	margin-top: 2rem;
 	display: block;
 	text-decoration: underline;
 	cursor: pointer;
 	color: rgb(88, 96, 141);
-}
-h2{
-		margin-bottom: 1rem;
-		font-weight: lighter;
-}
-p {
-	font-size: 0.9rem;
-	margin-bottom: 1rem;
-	line-height: 1.6rem;
-}
-.top-shape {
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 24rem;
-}
-.bottom-shape {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	height: 24rem;
+	background: none;
+	border: none;
 }
 
-#shape1{
-	animation: size 1500ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 1500ms infinite alternate running;
-}
-#shape2, #shadow1{
-	animation: size 2000ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 2000ms infinite alternate running;
-}
-#shape3{
-	animation: size 2000ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 2000ms infinite alternate running;
-}
-#shape4, #shadow2{
-	animation: size 1500ms ease-in-out forwards 1, fluctuate 3000ms ease-in-out 1500ms infinite alternate running;
+/* =========SMALL DEVICES========== */
+@media (max-width: 64rem) {
+	.App {
+		flex-direction: column;
+	}
+
+	.logo-holder {
+		max-height: 20vh;
+	}
+
+	.bottom-shape {
+		display: none;
+	}
+
+	.top-shape {
+		height: 14rem;
+		width: 15rem;
+		animation: sizeSmall 2000ms ease-in-out forwards 1;
+
+	}
+
+	.top-shape::before {
+		height: 14rem;
+		width: 15rem;
+		animation: sizeSmall 1500ms ease-in-out forwards 1;
+
+	}
+
+	.top-shape::after {
+		height: 14rem;
+		width: 15rem;
+		animation: sizeSmall 2000ms ease-in-out forwards 1;
+
+	}
 }
 
-@keyframes size {
-	0% {height: 70rem}
-	100% {height: 24rem}
-}
-@keyframes fluctuate{
-	0% {height: 24rem}
-	100% {height: 26rem}
+@keyframes sizeSmall {
+	0% {
+		height: 30rem;
+		width: 30rem;
+	}
+
+	100% {
+		height: 14rem;
+		width: 15rem;
+	}
 }
