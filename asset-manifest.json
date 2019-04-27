@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/recruitd-signup/static/css/main.83e5e669.chunk.css",
-    "main.js": "/recruitd-signup/static/js/main.593b55fe.chunk.js",
-    "main.js.map": "/recruitd-signup/static/js/main.593b55fe.chunk.js.map",
+    "main.css": "/recruitd-signup/static/css/main.4d2964db.chunk.css",
+    "main.js": "/recruitd-signup/static/js/main.4d796c00.chunk.js",
+    "main.js.map": "/recruitd-signup/static/js/main.4d796c00.chunk.js.map",
     "runtime~main.js": "/recruitd-signup/static/js/runtime~main.00c2ae47.js",
     "runtime~main.js.map": "/recruitd-signup/static/js/runtime~main.00c2ae47.js.map",
     "static/js/2.7b7097b1.chunk.js": "/recruitd-signup/static/js/2.7b7097b1.chunk.js",
     "static/js/2.7b7097b1.chunk.js.map": "/recruitd-signup/static/js/2.7b7097b1.chunk.js.map",
     "index.html": "/recruitd-signup/index.html",
-    "precache-manifest.30c2f2a745a6c9afcd0d124a49f8d01e.js": "/recruitd-signup/precache-manifest.30c2f2a745a6c9afcd0d124a49f8d01e.js",
+    "precache-manifest.32d74553fbfc39b7cd5ebadaa4833c96.js": "/recruitd-signup/precache-manifest.32d74553fbfc39b7cd5ebadaa4833c96.js",
     "service-worker.js": "/recruitd-signup/service-worker.js",
-    "static/css/main.83e5e669.chunk.css.map": "/recruitd-signup/static/css/main.83e5e669.chunk.css.map",
+    "static/css/main.4d2964db.chunk.css.map": "/recruitd-signup/static/css/main.4d2964db.chunk.css.map",
     "static/media/App.css": "/recruitd-signup/static/media/shape4.e1c5700d.svg"
   }
 }
