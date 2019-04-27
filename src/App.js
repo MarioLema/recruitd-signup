@@ -34,7 +34,7 @@ class App extends React.Component {
   //HANDLES THE SIGNUP FORM SUBMIT
   handleSubmit(e) {
     e.preventDefault();
-    let body = `name=${e.target[0].value}&email=${e.target[1].value}&password=${e.target[3].value}&passwordConfirmation=${e.target[3].value}`;
+    let body = `name=${e.target[0].value}&email=${e.target[1].value}&username=${e.target[2]}&password=${e.target[3].value}&passwordConfirmation=${e.target[3].value}`;
     const config = {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -54,7 +54,7 @@ class App extends React.Component {
       .catch(function(error) {
           this.setState({
             popupClasses: ["submit-message", "submit-fail"],
-            popUpText: `Sorry, email already registered`
+            popUpText: `Sorry, user already registered`
           });
         }.bind(this)
       );
